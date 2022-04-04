@@ -24,7 +24,7 @@ class HHNeuron:
     self._n = self.alpha_n(self._Vm) / (self.alpha_n(self._Vm) + self.beta_n(self._Vm))
     self._h = self.alpha_h(self._Vm) / (self.alpha_h(self._Vm) + self.beta_h(self._Vm))
 
-  def __call__(self, I):
+  def __call__(self, I, dt):
     self._n += ((self.alpha_n(self._Vm) * (1-self._n)) - (self.beta_n(self._Vm) * self._n)) * dt
     self._m += ((self.alpha_m(self._Vm) * (1-self._m)) - (self.beta_m(self._Vm) * self._m)) * dt
     self._h += ((self.alpha_h(self._Vm) * (1-self._h)) - (self.beta_h(self._Vm) * self._h)) * dt
