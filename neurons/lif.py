@@ -3,16 +3,16 @@
 # https://en.wikipedia.org/wiki/Biological_neuron_model#Leaky_integrate-and-fire
 
 class LIFNeuron:
-  Cm = 3
+  Cm = .1
+  R = 100
 
-  Vrest = -60
-  Vreset = -70
-  Vth = -40
-  Vspike = 20
-  R = 6
+  Vrest = 0
+  Vreset = -10
+  Vth = 20
+  Vspike = 80
 
   def __init__(self):
-    self._Vm = -60
+    self._Vm = 0
 
   def __call__(self, I, dt):
     if self._Vm >= self.Vspike:
